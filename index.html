@@ -8,6 +8,8 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <link rel="stylesheet" href="css/leaflet.css">
         <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/filter.css">
+<link rel="stylesheet" href="css/nouislider.min.css">
         <link rel="stylesheet" href="css/leaflet-measure.css">
         <style>
         html, body, #map {
@@ -32,8 +34,11 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="data/_20.js"></script>
-        <script src="data/_21.js"></script>
+        <script src="js/tailDT.js"></script>
+<script src="js/nouislider.min.js"></script>
+<script src="js/wNumb.js"></script>
+        <script src="data/_1.js"></script>
+        <script src="data/SheepMovementsMay2023_2.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -52,8 +57,8 @@
             highlightLayer.openPopup();
         }
         var map = L.map('map', {
-            zoomControl:true, maxZoom:28, minZoom:4
-        })
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[52.33209929508904,0.3684924522872913],[52.33673879260796,0.37982905814752743]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -71,192 +76,18 @@
         .className += ' fas fa-ruler';
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
-            if (bounds_group.getLayers().length) {
-                map.fitBounds(bounds_group.getBounds());
-            }
             map.setMaxBounds(map.getBounds());
         }
-        map.createPane('pane_tl5974_clipped_0');
-        map.getPane('pane_tl5974_clipped_0').style.zIndex = 400;
-        var img_tl5974_clipped_0 = 'data/tl5974_clipped_0.png';
-        var img_bounds_tl5974_clipped_0 = [[52.34075833235456,0.34655527761419397],[52.341226191837784,0.3472393128088659]];
-        var layer_tl5974_clipped_0 = new L.imageOverlay(img_tl5974_clipped_0,
-                                              img_bounds_tl5974_clipped_0,
-                                              {pane: 'pane_tl5974_clipped_0'});
-        bounds_group.addLayer(layer_tl5974_clipped_0);
-        map.addLayer(layer_tl5974_clipped_0);
-        map.createPane('pane_tl5971_clipped_1');
-        map.getPane('pane_tl5971_clipped_1').style.zIndex = 401;
-        var img_tl5971_clipped_1 = 'data/tl5971_clipped_1.png';
-        var img_bounds_tl5971_clipped_1 = [[52.32199565466991,0.34556268567860765],[52.32280597521015,0.3462645257105673]];
-        var layer_tl5971_clipped_1 = new L.imageOverlay(img_tl5971_clipped_1,
-                                              img_bounds_tl5971_clipped_1,
-                                              {pane: 'pane_tl5971_clipped_1'});
-        bounds_group.addLayer(layer_tl5971_clipped_1);
-        map.addLayer(layer_tl5971_clipped_1);
-        map.createPane('pane_tl5972_clipped_2');
-        map.getPane('pane_tl5972_clipped_2').style.zIndex = 402;
-        var img_tl5972_clipped_2 = 'data/tl5972_clipped_2.png';
-        var img_bounds_tl5972_clipped_2 = [[52.32279287281283,0.34560483687241106],[52.33178872183449,0.3467397506110557]];
-        var layer_tl5972_clipped_2 = new L.imageOverlay(img_tl5972_clipped_2,
-                                              img_bounds_tl5972_clipped_2,
-                                              {pane: 'pane_tl5972_clipped_2'});
-        bounds_group.addLayer(layer_tl5972_clipped_2);
-        map.addLayer(layer_tl5972_clipped_2);
-        map.createPane('pane_tl5973_clipped_3');
-        map.getPane('pane_tl5973_clipped_3').style.zIndex = 403;
-        var img_tl5973_clipped_3 = 'data/tl5973_clipped_3.png';
-        var img_bounds_tl5973_clipped_3 = [[52.33177561574724,0.34607992742593213],[52.340771442266295,0.34721523468545124]];
-        var layer_tl5973_clipped_3 = new L.imageOverlay(img_tl5973_clipped_3,
-                                              img_bounds_tl5973_clipped_3,
-                                              {pane: 'pane_tl5973_clipped_3'});
-        bounds_group.addLayer(layer_tl5973_clipped_3);
-        map.addLayer(layer_tl5973_clipped_3);
-        map.createPane('pane_tl6374_clipped_4');
-        map.getPane('pane_tl6374_clipped_4').style.zIndex = 404;
-        var img_tl6374_clipped_4 = 'data/tl6374_clipped_4.png';
-        var img_bounds_tl6374_clipped_4 = [[52.339689010917574,0.39121120502224743],[52.34033074194627,0.4004563643448654]];
-        var layer_tl6374_clipped_4 = new L.imageOverlay(img_tl6374_clipped_4,
-                                              img_bounds_tl6374_clipped_4,
-                                              {pane: 'pane_tl6374_clipped_4'});
-        bounds_group.addLayer(layer_tl6374_clipped_4);
-        map.addLayer(layer_tl6374_clipped_4);
-        map.createPane('pane_tl6071_clipped_5');
-        map.getPane('pane_tl6071_clipped_5').style.zIndex = 405;
-        var img_tl6071_clipped_5 = 'data/tl6071_clipped_5.png';
-        var img_bounds_tl6071_clipped_5 = [[52.32170356238811,0.34622236248014615],[52.32279287281283,0.3609241736763582]];
-        var layer_tl6071_clipped_5 = new L.imageOverlay(img_tl6071_clipped_5,
-                                              img_bounds_tl6071_clipped_5,
-                                              {pane: 'pane_tl6071_clipped_5'});
-        bounds_group.addLayer(layer_tl6071_clipped_5);
-        map.addLayer(layer_tl6071_clipped_5);
-        map.createPane('pane_tl6072_6');
-        map.getPane('pane_tl6072_6').style.zIndex = 406;
-        var img_tl6072_6 = 'data/tl6072_6.png';
-        var img_bounds_tl6072_6 = [[52.32250077279952,0.3462645257105812],[52.33177561574724,0.3614023649100883]];
-        var layer_tl6072_6 = new L.imageOverlay(img_tl6072_6,
-                                              img_bounds_tl6072_6,
-                                              {pane: 'pane_tl6072_6'});
-        bounds_group.addLayer(layer_tl6072_6);
-        map.addLayer(layer_tl6072_6);
-        map.createPane('pane_tl6073_7');
-        map.getPane('pane_tl6073_7').style.zIndex = 407;
-        var img_tl6073_7 = 'data/tl6073_7.png';
-        var img_bounds_tl6073_7 = [[52.33148341372936,0.34673975061106205],[52.34075833235456,0.3618808109376446]];
-        var layer_tl6073_7 = new L.imageOverlay(img_tl6073_7,
-                                              img_bounds_tl6073_7,
-                                              {pane: 'pane_tl6073_7'});
-        bounds_group.addLayer(layer_tl6073_7);
-        map.addLayer(layer_tl6073_7);
-        map.createPane('pane_tl6074_clipped_8');
-        map.getPane('pane_tl6074_clipped_8').style.zIndex = 408;
-        var img_tl6074_clipped_8 = 'data/tl6074_clipped_8.png';
-        var img_bounds_tl6074_clipped_8 = [[52.34046603799813,0.34721523468545756],[52.341213081726515,0.3619050390514726]];
-        var layer_tl6074_clipped_8 = new L.imageOverlay(img_tl6074_clipped_8,
-                                              img_bounds_tl6074_clipped_8,
-                                              {pane: 'pane_tl6074_clipped_8'});
-        bounds_group.addLayer(layer_tl6074_clipped_8);
-        map.addLayer(layer_tl6074_clipped_8);
-        map.createPane('pane_tl6171_clipped_9');
-        map.getPane('pane_tl6171_clipped_9').style.zIndex = 409;
-        var img_tl6171_clipped_9 = 'data/tl6171_clipped_9.png';
-        var img_bounds_tl6171_clipped_9 = [[52.32140965572876,0.3608817460312438],[52.32250077279952,0.3755835631243769]];
-        var layer_tl6171_clipped_9 = new L.imageOverlay(img_tl6171_clipped_9,
-                                              img_bounds_tl6171_clipped_9,
-                                              {pane: 'pane_tl6171_clipped_9'});
-        bounds_group.addLayer(layer_tl6171_clipped_9);
-        map.addLayer(layer_tl6171_clipped_9);
-        map.createPane('pane_tl6172_10');
-        map.getPane('pane_tl6172_10').style.zIndex = 410;
-        var img_tl6172_10 = 'data/tl6172_10.png';
-        var img_bounds_tl6172_10 = [[52.32220685728114,0.3609241736764111],[52.33148341372936,0.3760647207585917]];
-        var layer_tl6172_10 = new L.imageOverlay(img_tl6172_10,
-                                              img_bounds_tl6172_10,
-                                              {pane: 'pane_tl6172_10'});
-        bounds_group.addLayer(layer_tl6172_10);
-        map.addLayer(layer_tl6172_10);
-        map.createPane('pane_tl6173_11');
-        map.getPane('pane_tl6173_11').style.zIndex = 411;
-        var img_tl6173_11 = 'data/tl6173_11.png';
-        var img_bounds_tl6173_11 = [[52.3311894019641,0.3614023649100915],[52.34046603799813,0.3765461301761805]];
-        var layer_tl6173_11 = new L.imageOverlay(img_tl6173_11,
-                                              img_bounds_tl6173_11,
-                                              {pane: 'pane_tl6173_11'});
-        bounds_group.addLayer(layer_tl6173_11);
-        map.addLayer(layer_tl6173_11);
-        map.createPane('pane_tl6174_clipped_12');
-        map.getPane('pane_tl6174_clipped_12').style.zIndex = 412;
-        var img_tl6174_clipped_12 = 'data/tl6174_clipped_12.png';
-        var img_bounds_tl6174_clipped_12 = [[52.34017193255251,0.3618808109376478],[52.34092078294829,0.37657050821356197]];
-        var layer_tl6174_clipped_12 = new L.imageOverlay(img_tl6174_clipped_12,
-                                              img_bounds_tl6174_clipped_12,
-                                              {pane: 'pane_tl6174_clipped_12'});
-        bounds_group.addLayer(layer_tl6174_clipped_12);
-        map.addLayer(layer_tl6174_clipped_12);
-        map.createPane('pane_tl6271_clipped_13');
-        map.getPane('pane_tl6271_clipped_13').style.zIndex = 413;
-        var img_tl6271_clipped_13 = 'data/tl6271_clipped_13.png';
-        var img_bounds_tl6271_clipped_13 = [[52.321113928360624,0.37554087271712266],[52.32220685728114,0.39024270346505996]];
-        var layer_tl6271_clipped_13 = new L.imageOverlay(img_tl6271_clipped_13,
-                                              img_bounds_tl6271_clipped_13,
-                                              {pane: 'pane_tl6271_clipped_13'});
-        bounds_group.addLayer(layer_tl6271_clipped_13);
-        map.addLayer(layer_tl6271_clipped_13);
-        map.createPane('pane_tl6272_14');
-        map.getPane('pane_tl6272_14').style.zIndex = 414;
-        var img_tl6272_14 = 'data/tl6272_14.png';
-        var img_bounds_tl6272_14 = [[52.321911121451215,0.3755835631244298],[52.3311894019641,0.3907268267983455]];
-        var layer_tl6272_14 = new L.imageOverlay(img_tl6272_14,
-                                              img_bounds_tl6272_14,
-                                              {pane: 'pane_tl6272_14'});
-        bounds_group.addLayer(layer_tl6272_14);
-        map.addLayer(layer_tl6272_14);
-        map.createPane('pane_tl6273_15');
-        map.getPane('pane_tl6273_15').style.zIndex = 415;
-        var img_tl6273_15 = 'data/tl6273_15.png';
-        var img_bounds_tl6273_15 = [[52.33089357206417,0.37606472075859526],[52.34017193255251,0.39121120502224427]];
-        var layer_tl6273_15 = new L.imageOverlay(img_tl6273_15,
-                                              img_bounds_tl6273_15,
-                                              {pane: 'pane_tl6273_15'});
-        bounds_group.addLayer(layer_tl6273_15);
-        map.addLayer(layer_tl6273_15);
-        map.createPane('pane_tl6274_clipped_16');
-        map.getPane('pane_tl6274_clipped_16').style.zIndex = 416;
-        var img_tl6274_clipped_16 = 'data/tl6274_clipped_16.png';
-        var img_bounds_tl6274_clipped_16 = [[52.33987600666013,0.37654613017618405],[52.34062667275137,0.39123573347695345]];
-        var layer_tl6274_clipped_16 = new L.imageOverlay(img_tl6274_clipped_16,
-                                              img_bounds_tl6274_clipped_16,
-                                              {pane: 'pane_tl6274_clipped_16'});
-        bounds_group.addLayer(layer_tl6274_clipped_16);
-        map.addLayer(layer_tl6274_clipped_16);
-        map.createPane('pane_tl6371_clipped_17');
-        map.getPane('pane_tl6371_clipped_17').style.zIndex = 417;
-        var img_tl6371_clipped_17 = 'data/tl6371_clipped_17.png';
-        var img_bounds_tl6371_clipped_17 = [[52.32092705756904,0.3901997497982952],[52.3219111214512,0.39945951092427723]];
-        var layer_tl6371_clipped_17 = new L.imageOverlay(img_tl6371_clipped_17,
-                                              img_bounds_tl6371_clipped_17,
-                                              {pane: 'pane_tl6371_clipped_17'});
-        bounds_group.addLayer(layer_tl6371_clipped_17);
-        map.addLayer(layer_tl6371_clipped_17);
-        map.createPane('pane_tl6372_clipped_18');
-        map.getPane('pane_tl6372_clipped_18').style.zIndex = 418;
-        var img_tl6372_clipped_18 = 'data/tl6372_clipped_18.png';
-        var img_bounds_tl6372_clipped_18 = [[52.321724245674545,0.3902427034651128],[52.33089357206416,0.3999454974867417]];
-        var layer_tl6372_clipped_18 = new L.imageOverlay(img_tl6372_clipped_18,
-                                              img_bounds_tl6372_clipped_18,
-                                              {pane: 'pane_tl6372_clipped_18'});
-        bounds_group.addLayer(layer_tl6372_clipped_18);
-        map.addLayer(layer_tl6372_clipped_18);
-        map.createPane('pane_tl6373_clipped_19');
-        map.getPane('pane_tl6373_clipped_19').style.zIndex = 419;
-        var img_tl6373_clipped_19 = 'data/tl6373_clipped_19.png';
-        var img_bounds_tl6373_clipped_19 = [[52.330706637289786,0.39072682679834864],[52.33987600666012,0.4004317413103104]];
-        var layer_tl6373_clipped_19 = new L.imageOverlay(img_tl6373_clipped_19,
-                                              img_bounds_tl6373_clipped_19,
-                                              {pane: 'pane_tl6373_clipped_19'});
-        bounds_group.addLayer(layer_tl6373_clipped_19);
-        map.addLayer(layer_tl6373_clipped_19);
-        function pop__20(feature, layer) {
+        map.createPane('pane_raster25k_5083487_0');
+        map.getPane('pane_raster25k_5083487_0').style.zIndex = 400;
+        var img_raster25k_5083487_0 = 'data/raster25k_5083487_0.png';
+        var img_bounds_raster25k_5083487_0 = [[52.32091545734505,0.345562092014079],[52.34124303441369,0.4004756074866562]];
+        var layer_raster25k_5083487_0 = new L.imageOverlay(img_raster25k_5083487_0,
+                                              img_bounds_raster25k_5083487_0,
+                                              {pane: 'pane_raster25k_5083487_0'});
+        bounds_group.addLayer(layer_raster25k_5083487_0);
+        map.addLayer(layer_raster25k_5083487_0);
+        function pop__1(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -286,11 +117,11 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style__20_0(feature) {
+        function style__1_0(feature) {
             switch(String(feature.properties['EUI'])) {
                 case '10CE45FFFE007806':
                     return {
-                pane: 'pane__20',
+                pane: 'pane__1',
                 opacity: 1,
                 color: 'rgba(255,127,0,1.0)',
                 dashArray: '',
@@ -298,12 +129,12 @@
                 lineJoin: 'bevel',
                 weight: 1.0,
                 fillOpacity: 0,
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'F69E3ED27432CE60':
                     return {
-                pane: 'pane__20',
+                pane: 'pane__1',
                 opacity: 1,
                 color: 'rgba(31,120,180,1.0)',
                 dashArray: '',
@@ -311,26 +142,26 @@
                 lineJoin: 'bevel',
                 weight: 1.0,
                 fillOpacity: 0,
-                interactive: true,
+                interactive: false,
             }
                     break;
             }
         }
-        map.createPane('pane__20');
-        map.getPane('pane__20').style.zIndex = 420;
-        map.getPane('pane__20').style['mix-blend-mode'] = 'normal';
-        var layer__20 = new L.geoJson(json__20, {
+        map.createPane('pane__1');
+        map.getPane('pane__1').style.zIndex = 401;
+        map.getPane('pane__1').style['mix-blend-mode'] = 'normal';
+        var layer__1 = new L.geoJson(json__1, {
             attribution: '',
-            interactive: true,
-            dataVar: 'json__20',
-            layerName: 'layer__20',
-            pane: 'pane__20',
-            onEachFeature: pop__20,
-            style: style__20_0,
+            interactive: false,
+            dataVar: 'json__1',
+            layerName: 'layer__1',
+            pane: 'pane__1',
+            onEachFeature: pop__1,
+            style: style__1_0,
         });
-        bounds_group.addLayer(layer__20);
-        map.addLayer(layer__20);
-        function pop__21(feature, layer) {
+        bounds_group.addLayer(layer__1);
+        map.addLayer(layer__1);
+        function pop_SheepMovementsMay2023_2(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -351,25 +182,20 @@
                         <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['EUI'] !== null ? autolinker.link(feature.properties['EUI'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">EUI</th>\
+                        <td>' + (feature.properties['EUI'] !== null ? autolinker.link(feature.properties['EUI'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Server Date'] !== null ? autolinker.link(feature.properties['Server Date'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Server Dat'] !== null ? autolinker.link(feature.properties['Server Dat'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Message type'] !== null ? autolinker.link(feature.properties['Message type'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Message ty'] !== null ? autolinker.link(feature.properties['Message ty'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['UTC Date'] !== null ? autolinker.link(feature.properties['UTC Date'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['UTC Time'] !== null ? autolinker.link(feature.properties['UTC Time'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['UTC Date_1'] !== null ? autolinker.link(feature.properties['UTC Date_1'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['UTC Time_1'] !== null ? autolinker.link(feature.properties['UTC Time_1'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['Latitude'] !== null ? autolinker.link(feature.properties['Latitude'].toLocaleString()) : '') + '</td>\
@@ -380,30 +206,15 @@
                     <tr>\
                         <td colspan="2">' + (feature.properties['Altitude'] !== null ? autolinker.link(feature.properties['Altitude'].toLocaleString()) : '') + '</td>\
                     </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['cmd'] !== null ? autolinker.link(feature.properties['cmd'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['ts'] !== null ? autolinker.link(feature.properties['ts'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fcnt'] !== null ? autolinker.link(feature.properties['fcnt'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['port'] !== null ? autolinker.link(feature.properties['port'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['ack'] !== null ? autolinker.link(feature.properties['ack'].toLocaleString()) : '') + '</td>\
-                    </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style__21_0(feature) {
+        function style_SheepMovementsMay2023_2_0(feature) {
             switch(String(feature.properties['EUI'])) {
                 case '10CE45FFFE007806':
                     return {
-                pane: 'pane__21',
+                pane: 'pane_SheepMovementsMay2023_2',
                 radius: 2.0000000000000004,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -419,7 +230,7 @@
                     break;
                 case 'F69E3ED27432CE60':
                     return {
-                pane: 'pane__21',
+                pane: 'pane_SheepMovementsMay2023_2',
                 radius: 2.0000000000000004,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -435,27 +246,178 @@
                     break;
             }
         }
-        map.createPane('pane__21');
-        map.getPane('pane__21').style.zIndex = 421;
-        map.getPane('pane__21').style['mix-blend-mode'] = 'normal';
-        var layer__21 = new L.geoJson(json__21, {
+        map.createPane('pane_SheepMovementsMay2023_2');
+        map.getPane('pane_SheepMovementsMay2023_2').style.zIndex = 402;
+        map.getPane('pane_SheepMovementsMay2023_2').style['mix-blend-mode'] = 'normal';
+        var layer_SheepMovementsMay2023_2 = new L.geoJson(json_SheepMovementsMay2023_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json__21',
-            layerName: 'layer__21',
-            pane: 'pane__21',
-            onEachFeature: pop__21,
+            dataVar: 'json_SheepMovementsMay2023_2',
+            layerName: 'layer_SheepMovementsMay2023_2',
+            pane: 'pane_SheepMovementsMay2023_2',
+            onEachFeature: pop_SheepMovementsMay2023_2,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style__21_0(feature));
+                return L.circleMarker(latlng, style_SheepMovementsMay2023_2_0(feature));
             },
         });
-        bounds_group.addLayer(layer__21);
-        map.addLayer(layer__21);
+        bounds_group.addLayer(layer_SheepMovementsMay2023_2);
+        map.addLayer(layer_SheepMovementsMay2023_2);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'Sheep Movements May 2023<br /><table><tr><td style="text-align: center;"><img src="legend/SheepMovementsMay2023_2_Sheep78060.png" /></td><td>Sheep_7806</td></tr><tr><td style="text-align: center;"><img src="legend/SheepMovementsMay2023_2_SheepCE601.png" /></td><td>Sheep_CE60</td></tr></table>': layer_SheepMovementsMay2023_2,'<br /><table><tr><td style="text-align: center;"><img src="legend/_1_Sheep78060.png" /></td><td>Sheep_7806</td></tr><tr><td style="text-align: center;"><img src="legend/_1_SheepCE601.png" /></td><td>Sheep_CE60</td></tr></table>': layer__1,"raster-25k_5083487": layer_raster25k_5083487_0,}).addTo(map);
         setBounds();
+        var mapDiv = document.getElementById('map');
+        var row = document.createElement('div');
+        row.className="row";
+        row.id="all";
+        row.style.height = "100%";
+        var col1 = document.createElement('div');
+        col1.className="col9";
+        col1.id = "mapWindow";
+        col1.style.height = "99%";
+        col1.style.width = "80%";
+        col1.style.display = "inline-block";
+        var col2 = document.createElement('div');
+        col2.className="col3";
+        col2.id = "menu";
+        col2.style.display = "inline-block";
+        mapDiv.parentNode.insertBefore(row, mapDiv);
+        document.getElementById("all").appendChild(col1);
+        document.getElementById("all").appendChild(col2);
+        col1.appendChild(mapDiv)
+        var Filters = {"UTC Date": "int"};
+        function filterFunc() {
+          map.eachLayer(function(lyr){
+          if ("options" in lyr && "dataVar" in lyr["options"]){
+            features = this[lyr["options"]["dataVar"]].features.slice(0);
+            try{
+              for (key in Filters){
+                keyS = key.replace(/[^a-zA-Z0-9_]/g, "")
+                if (Filters[key] == "str" || Filters[key] == "bool"){
+                  var selection = [];
+                  var options = document.getElementById("sel_" + keyS).options
+                  for (var i=0; i < options.length; i++) {
+                    if (options[i].selected) selection.push(options[i].value);
+                  }
+                    try{
+                      if (key in features[0].properties){
+                        for (i = features.length - 1;
+                          i >= 0; --i){
+                          if (selection.indexOf(
+                          features[i].properties[key])<0
+                          && selection.length>0) {
+                          features.splice(i,1);
+                          }
+                        }
+                      }
+                    } catch(err){
+                  }
+                }
+                if (Filters[key] == "int"){
+                  sliderVals =  document.getElementById(
+                    "div_" + keyS).noUiSlider.get();
+                  try{
+                    if (key in features[0].properties){
+                    for (i = features.length - 1; i >= 0; --i){
+                      if (parseInt(features[i].properties[key])
+                          < sliderVals[0]
+                          || parseInt(features[i].properties[key])
+                          > sliderVals[1]){
+                            features.splice(i,1);
+                          }
+                        }
+                      }
+                    } catch(err){
+                    }
+                  }
+                if (Filters[key] == "real"){
+                  sliderVals =  document.getElementById(
+                    "div_" + keyS).noUiSlider.get();
+                  try{
+                    if (key in features[0].properties){
+                    for (i = features.length - 1; i >= 0; --i){
+                      if (features[i].properties[key]
+                          < sliderVals[0]
+                          || features[i].properties[key]
+                          > sliderVals[1]){
+                            features.splice(i,1);
+                          }
+                        }
+                      }
+                    } catch(err){
+                    }
+                  }
+                if (Filters[key] == "date"
+                  || Filters[key] == "datetime"
+                  || Filters[key] == "time"){
+                  try{
+                    if (key in features[0].properties){
+                      HTMLkey = key.replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, '');
+                      startdate = document.getElementById("dat_" +
+                        HTMLkey + "_date1").value.replace(" ", "T");
+                      enddate = document.getElementById("dat_" +
+                        HTMLkey + "_date2").value.replace(" ", "T");
+                      for (i = features.length - 1; i >= 0; --i){
+                        if (features[i].properties[key] < startdate
+                          || features[i].properties[key] > enddate){
+                          features.splice(i,1);
+                        }
+                      }
+                    }
+                  } catch(err){
+                  }
+                }
+              }
+            } catch(err){
+            }
+          this[lyr["options"]["layerName"]].clearLayers();
+          this[lyr["options"]["layerName"]].addData(features);
+          }
+          })
+        }
+            document.getElementById("menu").appendChild(
+                document.createElement("div"));
+            var div_UTCDate = document.createElement("div");
+            div_UTCDate.id = "div_UTCDate";
+            div_UTCDate.className = "slider";
+            document.getElementById("menu").appendChild(div_UTCDate);
+            var lab_UTCDate = document.createElement('div');
+            lab_UTCDate.innerHTML  = 'UTC Date: <span id="val_UTCDate"></span>';
+            lab_UTCDate.className = 'filterlabel';
+            document.getElementById("menu").appendChild(lab_UTCDate);
+            var reset_UTCDate = document.createElement('div');
+            reset_UTCDate.innerHTML = 'clear filter';
+            reset_UTCDate.className = 'filterlabel';
+            lab_UTCDate.className = 'filterlabel';
+            reset_UTCDate.onclick = function() {
+                sel_UTCDate.noUiSlider.reset();
+            };
+            document.getElementById("menu").appendChild(reset_UTCDate);
+            var sel_UTCDate = document.getElementById('div_UTCDate');
+            noUiSlider.create(sel_UTCDate, {
+                connect: true,
+                start: [120523, 250523],
+                step: 1,
+                format: wNumb({
+                    decimals: 0,
+                    }),
+                range: {
+                min: 120523,
+                max: 250523
+                }
+            });
+            sel_UTCDate.noUiSlider.on('update', function (values) {
+            filterVals =[];
+            for (value in values){
+            filterVals.push(parseInt(value))
+            }
+            val_UTCDate = document.getElementById('val_UTCDate');
+            val_UTCDate.innerHTML = values.join(' - ');
+                filterFunc()
+            });
         L.ImageOverlay.include({
             getBounds: function () {
                 return this._bounds;
